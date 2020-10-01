@@ -1,0 +1,65 @@
+{
+  "name": "mongo-utils",
+  "version": "0.0.1",
+  "description": "Handy CLI utils for managing multiple mongo instances",
+  "keywords": [
+    "mongoose",
+    "utils"
+  ],
+  "homepage": "https://github.com/yashshah1/mongo-utils#readme",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run compile",
+    "compile": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "precommit": "npm run format && npm run lint && npm run test",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run format && npm run lint"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Yash Shah <yashah1234@gmail.com>",
+  "contributors": [
+    {
+      "name": "Savan Nahar",
+      "email": "savannahar68@gmail.com"
+    },
+    {
+      "name": "Pranav Joglekar"
+    },
+    {
+      "name": "Vasu Sharma"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yashshah1/mongo-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yashshah1/mongo-utils/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "typescript": "^3.8.3",
+    "uglify-js": "^3.9.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run format && npm run lint",
+      "pre-push": "npm run format && npm run lint"
+    }
+  }
+}
